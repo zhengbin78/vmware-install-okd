@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: local-volume-config
+data:
+  storageClassMap: |
+        local-hdd:
+            hostDir: /data/local-storage/hdd
+            mountDir: /data/local-storage/hdd

@@ -1,0 +1,36 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: pv-template
+  annotations:
+    openshift.io/display-name: pv
+    description: pv template
+labels:
+  template: pv-template
+  component: pv
+parameters:
+- name: PV_NAME
+  required: true
+objects:
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: ${PV_NAME}
+  spec:
+    capacity:
+      storage: 10Gi
+    volumeMode: Filesystem
+    accessModes:
+    - ReadWriteOnce
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: local-hdd
+    local:
+      path: /data/local-storage/hdd/${PV_NAME}
+    nodeAffinity:
+      required:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - okd.io
