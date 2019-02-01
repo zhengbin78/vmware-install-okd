@@ -197,6 +197,7 @@ oc adm policy add-cluster-role-to-user cluster-admin ${USERNAME}
 # docker pull quay.io/external_storage/local-volume-provisioner:v2.3.0
 
 if [ "$PVS" = "true" ]; then
+  cd ~/vmware-install-okd
   ./local-storage.sh
 fi
 
