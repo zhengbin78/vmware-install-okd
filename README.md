@@ -8,7 +8,7 @@ yum update -y
 yum -y install open-vm-tools git
 reboot
 #
-git clone https://github.com/zhengbin/vmware-install-okd.git
+git clone https://github.com/zhengbin78/vmware-install-okd.git
 cd vmware-install-okd
 
 export USERNAME="admin"
