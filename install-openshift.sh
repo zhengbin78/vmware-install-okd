@@ -81,9 +81,9 @@ curl -o ansible-2.6.5-1.el7.noarch.rpm https://mirrors.huaweicloud.com/epel/7/x8
 yum -y --enablerepo=epel install ansible-2.6.5-1.el7.noarch.rpm
 
 cd ~
-wget https://github.com/openshift/openshift-ansible/archive/openshift-ansible-3.11.73-1.tar.gz
-tar -xzf openshift-ansible-3.11.73-1.tar.gz
-mv  openshift-ansible-openshift-ansible-3.11.73-1 openshift-ansible
+wget https://github.com/openshift/openshift-ansible/archive/openshift-ansible-3.11.83-1.tar.gz
+tar -xzf openshift-ansible-3.11.83-1.tar.gz
+mv  openshift-ansible-openshift-ansible-3.11.83-1 openshift-ansible
 sed -i 's/mirror.centos.org/mirrors.163.com/g' ~/openshift-ansible/roles/openshift_repos/templates/CentOS-OpenShift-Origin311.repo.j2
 sed -i 's/mirror.centos.org/mirrors.163.com/g' ~/openshift-ansible/roles/openshift_repos/templates/CentOS-OpenShift-Origin.repo.j2
 
