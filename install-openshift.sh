@@ -162,38 +162,31 @@ oc adm policy add-cluster-role-to-user cluster-admin ${USERNAME}
 
 
 # 以下新开窗口提前执行为佳,否则安装很慢.
-# docker pull docker.io/openshift/origin-docker-registry:v3.11.0
-# docker pull docker.io/openshift/origin-node:v3.11
-# docker pull docker.io/openshift/origin-node:v3.11.0
-# docker pull docker.io/openshift/origin-control-plane:v3.11
-# docker pull docker.io/openshift/origin-control-plane:v3.11.0
-# docker pull docker.io/openshift/origin-haproxy-router:v3.11
-# docker pull docker.io/openshift/origin-haproxy-router:v3.11.0
-# docker pull docker.io/openshift/origin-deployer:v3.11.0
-# docker pull docker.io/openshift/origin-pod:v3.11
+
 # docker pull docker.io/openshift/origin-pod:v3.11.0
-# docker pull docker.io/openshift/oauth-proxy:v1.1.0
-# docker pull quay.io/coreos/kube-rbac-proxy:v0.3.1
+# docker pull docker.io/openshift/origin-node:v3.11.0
 # docker pull quay.io/coreos/etcd:v3.2.22
-# docker pull quay.io/coreos/kube-state-metrics:v1.3.1
-# docker pull quay.io/coreos/configmap-reload:v0.0.1
-# docker pull quay.io/coreos/cluster-monitoring-operator:v0.1.1
-# 
-# docker pull docker.io/openshift/origin-service-catalog:v3.11
-# docker pull docker.io/openshift/origin-service-catalog:v3.11.0
-# docker pull docker.io/openshift/origin-console:v3.11
-# docker pull docker.io/openshift/origin-console:v3.11.0
-# docker pull docker.io/ansibleplaybookbundle/origin-ansible-service-broker:latest
-# docker pull docker.io/openshift/origin-web-console:v3.11
-# docker pull docker.io/openshift/origin-web-console:v3.11.0
+# docker pull docker.io/openshift/origin-control-plane:v3.11.0
+# docker pull docker.io/openshift/origin-deployer:v3.11.0
+# docker pull docker.io/openshift/origin-haproxy-router:v3.11.0
+# docker pull docker.io/openshift/origin-docker-registry:v3.11.0
 # docker pull docker.io/cockpit/kubernetes:latest
+# docker pull quay.io/coreos/cluster-monitoring-operator:v0.1.1
+# docker pull quay.io/coreos/prometheus-operator:v0.23.2
+# docker pull docker.io/openshift/origin-web-console:v3.11.0
+# docker pull docker.io/grafana/grafana:5.2.1
+# docker pull docker.io/openshift/oauth-proxy:v1.1.0
+# docker pull docker.io/openshift/origin-console:v3.11.0
+# docker pull docker.io/openshift/prometheus:v2.3.2
+# docker pull quay.io/coreos/prometheus-config-reloader:v0.23.2
+# docker pull docker.io/openshift/origin-service-catalog:v3.11.0
+# docker pull quay.io/coreos/configmap-reload:v0.0.1
 # docker pull docker.io/openshift/prometheus-alertmanager:v0.15.2
 # docker pull docker.io/openshift/prometheus-node-exporter:v0.16.0
-# docker pull docker.io/openshift/prometheus:v2.3.2
-# docker pull docker.io/grafana/grafana:5.2.1
-# docker pull docker.io/openshift/origin-metrics-heapster:v3.11.0
-# docker pull quay.io/coreos/prometheus-config-reloader:v0.23.2
-# docker pull quay.io/coreos/prometheus-operator:v0.23.2
+# docker pull quay.io/coreos/kube-rbac-proxy:v0.3.1
+# docker pull docker.io/ansibleplaybookbundle/origin-ansible-service-broker:latest
+# docker pull docker.io/openshift/origin-template-service-broker:v3.11.0
+# docker pull quay.io/coreos/kube-state-metrics:v1.3.1
 # docker pull quay.io/external_storage/local-volume-provisioner:v2.3.0
 
 if [ "$PVS" = "true" ]; then
