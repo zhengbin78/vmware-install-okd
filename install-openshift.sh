@@ -65,9 +65,10 @@ sed -i -e "s/mirror.centos.org/mirrors.163.com/g" /etc/yum.repos.d/CentOS-Base.r
 
 
 
-yum install -y lrzsz telnet wget bash-completion net-tools httpd-tools java-1.8.0-openjdk-headless lsof zip unzip bind-utils yum-utils  bridge-utils pyOpenSSL kexec-tools sos psacct   docker   python-passlib epel-release
+yum install -y lrzsz telnet wget bash-completion net-tools httpd-tools java-1.8.0-openjdk-headless lsof zip unzip bind-utils yum-utils  bridge-utils pyOpenSSL kexec-tools sos psacct   docker   python-passlib 
 
 # Disable the EPEL repository globally so that is not accidentally used during later steps of the installation
+wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
 sed -i -e "s/^enabled=1/enabled=0/" /etc/yum.repos.d/epel.repo
 
 systemctl | grep "NetworkManager.*running" 
@@ -81,9 +82,9 @@ curl -o ansible-2.6.5-1.el7.noarch.rpm https://mirrors.huaweicloud.com/epel/7/x8
 yum -y --enablerepo=epel install ansible-2.6.5-1.el7.noarch.rpm
 
 cd ~
-wget https://github.com/openshift/openshift-ansible/archive/openshift-ansible-3.11.83-1.tar.gz
-tar -xzf openshift-ansible-3.11.83-1.tar.gz
-mv  openshift-ansible-openshift-ansible-3.11.83-1 openshift-ansible
+wget https://github.com/openshift/openshift-ansible/archive/openshift-ansible-3.11.111-1.tar.gz
+tar -xzf openshift-ansible-3.11.111-1.tar.gz
+mv  openshift-ansible-openshift-ansible-3.11.111-1 openshift-ansible
 sed -i 's/mirror.centos.org/mirrors.163.com/g' ~/openshift-ansible/roles/openshift_repos/templates/CentOS-OpenShift-Origin311.repo.j2
 sed -i 's/mirror.centos.org/mirrors.163.com/g' ~/openshift-ansible/roles/openshift_repos/templates/CentOS-OpenShift-Origin.repo.j2
 
