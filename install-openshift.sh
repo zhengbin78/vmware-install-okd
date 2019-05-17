@@ -78,8 +78,8 @@ if [ $? -eq 1 ]; then
 fi
 
 # install the packages for Ansible
-curl -o ansible-2.6.5-1.el7.noarch.rpm https://mirrors.huaweicloud.com/epel/7/x86_64/Packages/a/ansible-2.6.5-1.el7.noarch.rpm
-yum -y --enablerepo=epel install ansible-2.6.5-1.el7.noarch.rpm
+curl -o ansible-2.6.16-1.el7.ans.noarch.rpm https://releases.ansible.com/ansible/rpm/release/epel-7-x86_64/ansible-2.6.16-1.el7.ans.noarch.rpm
+yum -y --enablerepo=epel install ansible-2.6.16-1.el7.ans.noarch.rpm
 
 cd ~
 wget https://github.com/openshift/openshift-ansible/archive/openshift-ansible-3.11.111-1.tar.gz
