@@ -56,7 +56,7 @@ sed -i -e "s/#baseurl/baseurl/g" /etc/yum.repos.d/CentOS-Base.repo
 sed -i -e "s/mirror.centos.org/mirrors.163.com/g" /etc/yum.repos.d/CentOS-Base.repo
 
 
-
+yum clean all
 yum install -y lrzsz telnet wget bash-completion net-tools httpd-tools java-1.8.0-openjdk-headless lsof zip unzip bind-utils yum-utils  bridge-utils pyOpenSSL kexec-tools sos psacct   docker   python-passlib 
 
 # Disable the EPEL repository globally so that is not accidentally used during later steps of the installation

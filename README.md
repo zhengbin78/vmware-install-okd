@@ -8,8 +8,7 @@ OS版本： Centos 7.6
 
 ```
 # install vmware tools
-yum update -y
-yum -y install open-vm-tools git
+yum update -y && yum -y install open-vm-tools git
 reboot
 #
 git clone https://github.com/zhengbin78/vmware-install-okd.git
