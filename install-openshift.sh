@@ -49,14 +49,6 @@ echo "* Your password is $PASSWORD "
 echo "* OpenShift version: $VERSION "
 echo "******"
 
-# install the following base packages
-#yum install -y  wget git zile nano net-tools docker-1.13.1\
-#				bind-utils iptables-services \
-#				bridge-utils bash-completion \
-#				kexec-tools sos psacct openssl-devel \
-#				httpd-tools NetworkManager \
-#				python-cryptography python2-pip python-devel  python-passlib \
-#				java-1.8.0-openjdk-headless "@Development Tools"
 
 
 sed -i -e "s/mirrorlist/#mirrorlist/g" /etc/yum.repos.d/CentOS-Base.repo
@@ -82,9 +74,9 @@ curl -o ansible-2.6.16-1.el7.ans.noarch.rpm https://releases.ansible.com/ansible
 yum -y --enablerepo=epel install ansible-2.6.16-1.el7.ans.noarch.rpm
 
 cd ~
-wget https://github.com/openshift/openshift-ansible/archive/openshift-ansible-3.11.111-1.tar.gz
-tar -xzf openshift-ansible-3.11.111-1.tar.gz
-mv  openshift-ansible-openshift-ansible-3.11.111-1 openshift-ansible
+wget https://github.com/openshift/openshift-ansible/archive/openshift-ansible-3.11.115-1.tar.gz
+tar -xzf openshift-ansible-3.11.115-1.tar.gz
+mv  openshift-ansible-openshift-ansible-3.11.115-1 openshift-ansible
 sed -i 's/mirror.centos.org/mirrors.163.com/g' ~/openshift-ansible/roles/openshift_repos/templates/CentOS-OpenShift-Origin311.repo.j2
 sed -i 's/mirror.centos.org/mirrors.163.com/g' ~/openshift-ansible/roles/openshift_repos/templates/CentOS-OpenShift-Origin.repo.j2
 
@@ -115,12 +107,6 @@ else
 	wipefs --all $DISK
 	docker-storage-setup
 fi
-
-
-# 提前解决部分红帽的docker镜像不能下载问题.
-wget http://mirrors.ustc.edu.cn/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm
-mkdir -p /etc/rhsm/ca/
-rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem
 
 
 echo { \"registry-mirrors\": [\"https://bo30b6ic.mirror.aliyuncs.com/\"] } > /etc/docker/daemon.json
