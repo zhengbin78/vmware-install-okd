@@ -81,8 +81,8 @@ sed -i 's/mirror.centos.org/mirrors.163.com/g' ~/openshift-ansible/roles/openshi
 sed -i 's/mirror.centos.org/mirrors.163.com/g' ~/openshift-ansible/roles/openshift_repos/templates/CentOS-OpenShift-Origin.repo.j2
 
 
-hostnamectl    set-hostname okd.io
-export HOSTNAME="okd.io"
+hostnamectl    set-hostname okd
+export HOSTNAME="okd"
 
 cat <<EOD > /etc/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 
